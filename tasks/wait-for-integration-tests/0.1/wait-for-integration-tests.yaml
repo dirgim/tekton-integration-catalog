@@ -69,7 +69,7 @@ spec:
             should_fail=false
             for scenario_name in $(echo -n "${scenarios_failed}")
             do
-              if [[ $(echo "${SCENARIOS_TO_CHECK}" | wc -w) -gt 0 && -z $(echo "${SCENARIOS_TO_CHECK}" | grep -w "${scenario_name}" ) ]]; then
+              if [[ $(echo "${SCENARIOS_TO_CHECK}" | wc -w) -gt 0 ]] && ! echo "${SCENARIOS_TO_CHECK}" | grep -qw "${scenario_name}"; then
                 echo "Skipped ${scenario_name} since it isn't listed in the SCENARIOS_TO_CHECK parameter"
                 continue
               else
