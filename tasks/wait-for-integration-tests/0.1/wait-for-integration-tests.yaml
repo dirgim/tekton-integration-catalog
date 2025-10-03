@@ -73,7 +73,7 @@ spec:
                 echo "Skipped ${scenario_name} since it isn't listed in the SCENARIOS_TO_CHECK parameter"
                 continue
               else
-                echo "Failing the task on account of ${scenario_name} and the fail-on-failed-test parameter being set to `true`"
+                echo "Failing the task on account of ${scenario_name} failing"
                 should_fail=true
               fi
             done
